@@ -13,9 +13,11 @@ namespace MatriculaProway.Controllers
     {
         private readonly testeprowayContext _context;
 
+
         public MatriculasController(testeprowayContext context)
         {
             _context = context;
+
         }
 
         // GET: Matriculas
@@ -51,11 +53,11 @@ namespace MatriculaProway.Controllers
         // GET: Matriculas/Create
         public IActionResult Create()
         {
-            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "AlunoId");
-            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "SalaId");
-            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "SalaId");
-            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId");
-            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId");
+            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "Nome");
+            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "Nome");
+            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "Nome");
+            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome");
+            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome");
             return View();
         }
 
@@ -72,11 +74,11 @@ namespace MatriculaProway.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "AlunoId", matricula.AlunoId);
-            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "SalaId", matricula.Etapa1);
-            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "SalaId", matricula.Etapa2);
-            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId", matricula.Turno1Lanchonete);
-            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId", matricula.Turno2Lanchonete);
+            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "Nome", matricula.AlunoId);
+            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "Nome", matricula.Etapa1);
+            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "Nome", matricula.Etapa2);
+            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome", matricula.Turno1Lanchonete);
+            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome", matricula.Turno2Lanchonete);
             return View(matricula);
         }
 
@@ -93,11 +95,11 @@ namespace MatriculaProway.Controllers
             {
                 return NotFound();
             }
-            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "AlunoId", matricula.AlunoId);
-            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "SalaId", matricula.Etapa1);
-            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "SalaId", matricula.Etapa2);
-            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId", matricula.Turno1Lanchonete);
-            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId", matricula.Turno2Lanchonete);
+            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "Nome", matricula.AlunoId);
+            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "Nome", matricula.Etapa1);
+            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "Nome", matricula.Etapa2);
+            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome", matricula.Turno1Lanchonete);
+            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome", matricula.Turno2Lanchonete);
             return View(matricula);
         }
 
@@ -133,11 +135,11 @@ namespace MatriculaProway.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "AlunoId", matricula.AlunoId);
-            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "SalaId", matricula.Etapa1);
-            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "SalaId", matricula.Etapa2);
-            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId", matricula.Turno1Lanchonete);
-            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "LanchoneteId", matricula.Turno2Lanchonete);
+            ViewData["AlunoId"] = new SelectList(_context.Alunos, "AlunoId", "Nome", matricula.AlunoId);
+            ViewData["Etapa1"] = new SelectList(_context.Salas, "SalaId", "Nome", matricula.Etapa1);
+            ViewData["Etapa2"] = new SelectList(_context.Salas, "SalaId", "Nome", matricula.Etapa2);
+            ViewData["Turno1Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome", matricula.Turno1Lanchonete);
+            ViewData["Turno2Lanchonete"] = new SelectList(_context.Lanchonetes, "LanchoneteId", "Nome", matricula.Turno2Lanchonete);
             return View(matricula);
         }
 
