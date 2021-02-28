@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MatriculaProway.Models.Matricula>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Matriculas</h1>
+
+<p>
+    <a asp-action="Create">Matricular Aluno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Aluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etapa1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etapa2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turno1Lanchonete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turno2Lanchonete)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aluno.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etapa1Navigation.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etapa2Navigation.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turno1LanchoneteNavigation.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turno2LanchoneteNavigation.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MatriculaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MatriculaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MatriculaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
