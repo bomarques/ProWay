@@ -18,6 +18,7 @@ Sistema Web com ASP Net core MVC e Entity framework core, utilizando o Microsoft
 > 2. Inicie o servidor SQL Server.
 > 3. Inicie o SQL Server Management Studio .
 >> 3.1 No SQL Server Management Studio abra o arquivo script.sql na pasta MatriculaProway\utils e execute o script para criar o banco e as tabelas.<br/>
+>> 3.2 Na pasta MatriculaProway\utils também existe um pdf com o Esquema de modelagem de dados para consulta.<br/>
 > 4. No Visual Studio Abra o arquivo solução MatriculaProway.sln
 >> 4.1 Em Startup.cs e Models/testeprowayContext, altere a string de conexão, caso necessário. 
 >> 4.2 Execute o sistema (Control + F5)
